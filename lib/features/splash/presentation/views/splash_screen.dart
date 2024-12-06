@@ -1,4 +1,4 @@
-import 'package:bookly/features/splash/presentation/views/widgets/SplashScreenBody.dart';
+import 'package:bookly/features/splash/presentation/views/widgets/splash_screen_body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

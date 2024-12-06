@@ -6,12 +6,16 @@ import 'package:get/get.dart';
 
 import 'constants.dart';
 
-void main() => runApp(
-  DevicePreview(
-    enabled: !kReleaseMode,
-    builder: (context) => Bookly(), // Wrap your app
-  ),
-);
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => Bookly(), // Wrap your app
+    ),
+  );
+}
 
 class Bookly extends StatelessWidget {
   const Bookly({super.key});
@@ -22,7 +26,13 @@ class Bookly extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      theme: ThemeData.dark().copyWith(scaffoldBackgroundColor:primaryColor,),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: primaryColor,
+        textTheme: ThemeData.dark().textTheme.apply(
+              bodyColor: Colors.white, // Example: Change body text color
+              displayColor: Colors.white, // Example: Change display text color
+            ),
+      ),
       home: const SplashScreen(),
     );
   }
