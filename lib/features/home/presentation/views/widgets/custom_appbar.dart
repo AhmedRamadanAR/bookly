@@ -1,5 +1,4 @@
 import 'package:bookly/core/utilis/assets_data.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget {

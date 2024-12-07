@@ -12,7 +12,7 @@ void main() {
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
-      builder: (context) => Bookly(), // Wrap your app
+      builder: (context) => const Bookly(), // Wrap your app
     ),
   );
 }
