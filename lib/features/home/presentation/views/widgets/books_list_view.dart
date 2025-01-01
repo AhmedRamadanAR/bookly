@@ -1,8 +1,9 @@
-import 'package:bookly/features/home/presentation/views/widgets/book_list_item.dart';
 import 'package:flutter/cupertino.dart';
 
-class booksListView extends StatelessWidget {
-  const booksListView({super.key});
+import 'custom_book_image.dart';
+
+class BooksListView extends StatelessWidget {
+  const BooksListView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +14,7 @@ class booksListView extends StatelessWidget {
           itemCount: 4,
           itemBuilder: (context, index) => const Padding(
               padding: EdgeInsets.symmetric(horizontal: 8),
-              child: bookListItem())),
+              child: CustomBookImage())),
     );
   }
 }

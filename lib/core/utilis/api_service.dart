@@ -1,4 +1,3 @@
-import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:dio/dio.dart';
 
 const baseUrl = "https://www.googleapis.com/books/v1/";
@@ -17,9 +16,9 @@ class ApiService {
       return dio;
     }
   }
+static Future<Map<String,dynamic>>getData({required String url})async{
+var response =await dio?.get(url);
+return response?.data;
+}
 
-  static Future<Response?>getBooksData({required String url})async{
-   var response =await  dio?.get(url);
-   return response;
-  }
 }
