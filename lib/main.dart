@@ -13,7 +13,9 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   ApiService.initDio();
   await Hive.initFlutter();
-  Hive.registerAdapter(BookEntityAdapter()); //
+  Hive.registerAdapter(BookEntityAdapter());
+  await Hive.openBox<BookEntity>(kFeaturedBox);
+  await Hive.openBox<BookEntity>(kNewestBox);
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
@@ -27,7 +29,6 @@ class Bookly extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
@@ -36,7 +37,7 @@ class Bookly extends StatelessWidget {
           scaffoldBackgroundColor: primaryColor,
           textTheme:
               GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme)),
-  routerConfig: AppRouter.router,
+      routerConfig: AppRouter.router,
     );
   }
 }
