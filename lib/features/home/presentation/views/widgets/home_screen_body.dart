@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../../core/utilis/styles.dart';
 import 'best_seller_listview.dart';
+import 'featured_list_view_bloc_builder.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -15,7 +16,8 @@ class HomeScreenBody extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const CustomAppBar(),
-        const BooksListView(),
+
+        FeaturedListViewBlocBuilder(),
         const SizedBox(
           height: 20,
         ),
