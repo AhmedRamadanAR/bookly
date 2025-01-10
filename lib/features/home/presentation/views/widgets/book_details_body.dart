@@ -19,7 +19,7 @@ class BookDetailsBody extends StatelessWidget {
                 child: Column(
                   children: [
                     BookDetailsAppBar(),
-                    BookDetailsSection(),
+                    BookDetailsSection(rate:"4.0"),
                     BookActions(),
                     Expanded(
                       child: SizedBox(

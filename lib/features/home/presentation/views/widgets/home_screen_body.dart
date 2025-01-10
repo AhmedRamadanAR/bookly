@@ -1,3 +1,4 @@
+import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view_bloc_builder.dart';
 import 'package:bookly/features/home/presentation/views/widgets/books_list_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_appbar.dart';
 import 'package:flutter/cupertino.dart';
@@ -34,8 +35,8 @@ class HomeScreenBody extends StatelessWidget {
       ],
 
     ),),
-      SliverFillRemaining(child:        BestSellerListView()
-      ,)],);
+    BestSellerListViewBlocBuilder()
+      ],);
 
 
   }

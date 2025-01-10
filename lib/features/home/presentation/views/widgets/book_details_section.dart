@@ -6,8 +6,8 @@ import 'book_rating.dart';
 import 'custom_book_image.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
-
+  const BookDetailsSection({super.key,required this.rate});
+final String rate;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -36,7 +36,7 @@ class BookDetailsSection extends StatelessWidget {
         SizedBox(
           height: 5,
         ),
-        BookRating(
+        BookRating(bookRate: rate,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         SizedBox(

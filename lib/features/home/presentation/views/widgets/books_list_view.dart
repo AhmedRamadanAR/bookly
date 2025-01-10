@@ -12,10 +12,10 @@ final List<BookEntity>booksList;
       height: MediaQuery.of(context).size.height * 0.25,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
-          itemCount: 4,
+          itemCount: booksList.length,
           itemBuilder: (context, index) => Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8),
-              child: CustomBookImage(imageUrl: booksList[index].image ??"",))),
+              child: CustomBookImage(imageUrl: booksList[index].image,))),
     );
   }
 }

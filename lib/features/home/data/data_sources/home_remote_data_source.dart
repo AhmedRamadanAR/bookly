@@ -11,10 +11,7 @@ abstract class HomeRemoteDataSource {
   Future<List<BookEntity>> fetchNewsBooks();
 }
 
-// static Future<Response?>getBooksData({required String url})async{
-// var response =await  dio?.get(url);
-// return response;
-// }
+
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource {
 
   @override

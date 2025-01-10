@@ -6,11 +6,14 @@ import 'newst_books_states.dart';
 class NewestBooksCubit extends Cubit<NewestBooksStates> {
   NewestBooksCubit(this.fetchNewBooksUseCase) : super(NewestBooksInitial());
   final FetchNewBooksUseCase fetchNewBooksUseCase;
-
   Future<void> fetchNewestBooks() async {
     emit(NewestBooksLoading());
     var result = await fetchNewBooksUseCase.call();
-    result.fold((failure) => {emit(NewestBooksError(failure.message))},
-        (books) => {NewestBooksSuccess(books)});
+    result.fold((failure) =>
+    {
+      emit(NewestBooksError(failure.message))
+    }, (books) => {
+      emit(NewestBooksSuccess(books))
+    });
   }
 }
