@@ -7,6 +7,12 @@ abstract class FeaturedBooksStates {}
 
 class FeaturedBooksInitial extends FeaturedBooksStates {}
 class FeaturedBooksLoading extends FeaturedBooksStates {}
+class FeaturedBooksPaginationLoading extends FeaturedBooksStates{}
+class FeaturedBooksPaginationError extends FeaturedBooksStates{
+  final String errorMessage;
+  FeaturedBooksPaginationError( this.errorMessage);
+}
+
 class FeaturedBooksError extends FeaturedBooksStates {
   final String errorMessage;
   FeaturedBooksError( this.errorMessage);

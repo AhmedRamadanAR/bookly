@@ -1,12 +1,10 @@
 import 'package:bookly/features/home/presentation/views/widgets/best_seller_list_view_bloc_builder.dart';
-import 'package:bookly/features/home/presentation/views/widgets/books_list_view.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_appbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utilis/styles.dart';
-import 'best_seller_listview.dart';
-import 'featured_list_view_bloc_builder.dart';
+import 'featured_list_view_bloc_consumer.dart';
 
 class HomeScreenBody extends StatelessWidget {
   const HomeScreenBody({super.key});
@@ -18,7 +16,7 @@ class HomeScreenBody extends StatelessWidget {
       children: [
         const CustomAppBar(),
 
-        FeaturedListViewBlocBuilder(),
+        FeaturedListViewBlocConsumer(),
         const SizedBox(
           height: 20,
         ),
